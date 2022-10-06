@@ -1,5 +1,4 @@
 resource "aws_instance" "instance1" {
-  Name                   = "${var.ec2_name}${1}"
   ami                    = var.ami-ubuntu
   instance_type          = var.micro
   availability_zone      = var.zoneA
@@ -16,7 +15,6 @@ resource "aws_instance" "instance1" {
 }
 
 resource "aws_instance" "instance2" {
-  Name                   = "${var.ec2_name}${2}"
   ami                    = var.ami-ubuntu
   instance_type          = var.micro
   availability_zone      = var.zoneB
