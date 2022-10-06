@@ -32,6 +32,7 @@ variable "docker_config_file" {
   type        = string
   description = "File with docker configuration ROOT"
 }
+
 variable "name" {
   type        = string
   description = "Value for created_by tag"
@@ -40,6 +41,7 @@ variable "bootcamp" {
   type        = string
   description = "Value for bootcamp tag"
 }
+
 variable "ec2_name" {
   type        = string
   description = "Default name for ec2 instance"
