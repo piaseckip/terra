@@ -2,10 +2,10 @@ resource "aws_instance" "instance1" {
   ami                    = var.ami_ubuntu
   instance_type          = var.micro
   availability_zone      = var.zoneA
-  subnet_id              = aws_subnet.my_subnet.id
+  subnet_id              = subnets_id[0]
   key_name               = var.ssh_key
   user_data              = file(var.docker_config_file)
-  vpc_security_group_ids = [aws_security_group.tf-alb_sg.id]
+  vpc_security_group_ids = [sg_id]
   tags = {
     name       = "${var.ec2_name}${1}"
     created_by = "Piotr Piasecki"
@@ -18,10 +18,10 @@ resource "aws_instance" "instance2" {
   ami                    = var.ami_ubuntu
   instance_type          = var.micro
   availability_zone      = var.zoneB
-  subnet_id              = aws_subnet.my_subnet2.id
+  subnet_id              = subnets_id[1]
   key_name               = var.ssh_key
   user_data              = file(var.docker_config_file)
-  vpc_security_group_ids = [aws_security_group.tf-alb_sg.id]
+  vpc_security_group_ids = [sg_id]
   tags = {
     name       = "${var.ec2_name}${2}"
     created_by = "Piotr Piasecki"
