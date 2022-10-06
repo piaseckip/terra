@@ -12,15 +12,18 @@ module "Compute" {
   bootcamp           = var.bootcamp
   ec2_name           = var.ec2_name
   tags               = var.tags
+  subnets_id         = module.Network.subnets_list
+  vpc_id             = module.Network.vpc_id
+  sg_id              = module.Network.sg_group_id
 
 
 }
 module "Network" {
-  source             = "./Modules/Network"
-  region             = var.region
-  zoneA              = var.zoneA
-  zoneB              = var.zoneB
-  name               = var.name
-  bootcamp           = var.bootcamp
-  tags               = var.tags
+  source   = "./Modules/Network"
+  region   = var.region
+  zoneA    = var.zoneA
+  zoneB    = var.zoneB
+  name     = var.name
+  bootcamp = var.bootcamp
+  tags     = var.tags
 }

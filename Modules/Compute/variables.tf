@@ -37,4 +37,13 @@ variable "ec2_name" {
 
 variable "tags" {
   description = "Tags for ec2 instances and its volumes"
-} 
+}
+variable "subnets_id" {
+  type = list(string)
+}
+variable "vpc_id" {
+  type = string
+}
+variable "sg_id" {
+  type = string
+}
