@@ -3,7 +3,7 @@ resource "aws_lb" "alb" {
   internal                   = false
   load_balancer_type         = "application"
   security_groups            = [var.sg_id]
-  subnets                    = [var.subnets_id[0],var.subnets_id[1]]
+  subnets                    = [var.subnets_id[0], var.subnets_id[1]]
   enable_deletion_protection = false
   tags = {
     Name = "Piotrek-tf-alb"

@@ -25,12 +25,15 @@ variable "ssh_key" {
 variable "docker_config_file" {
   description = "File with docker configuration"
 }
+
 variable "name" {
   description = "Value for created_by tag"
 }
+
 variable "bootcamp" {
   description = "Value for bootcamp tag"
 }
+
 variable "ec2_name" {
   description = "Default name for ec2 instance"
 }
@@ -41,9 +44,11 @@ variable "tags" {
 variable "subnets_id" {
   type = list(string)
 }
+
 variable "vpc_id" {
   type = string
 }
+
 variable "sg_id" {
   type = string
 }
