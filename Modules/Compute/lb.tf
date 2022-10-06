@@ -2,8 +2,8 @@ resource "aws_lb" "alb" {
   name                       = "Piotrek-tf-alb"
   internal                   = false
   load_balancer_type         = "application"
-  security_groups            = [sg_id]
-  subnets                    = [subnets_id[0],subnets_id[1]]
+  security_groups            = [var.sg_id]
+  subnets                    = [var.subnets_id[0],var.subnets_id[1]]
   enable_deletion_protection = false
   tags = {
     Name = "Piotrek-tf-alb"
@@ -14,7 +14,7 @@ resource "aws_lb_target_group" "target_group" {
   name     = "Piotrek-tf-lb-tg"
   port     = 80
   protocol = "HTTP"
-  vpc_id   = aws_vpc.main_vpc.id
+  vpc_id   = var.vpc_id
 }
 
 resource "aws_lb_target_group_attachment" "attach1" {
