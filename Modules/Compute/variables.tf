@@ -23,7 +23,7 @@ variable "ssh_key" {
 }
 
 variable "docker_config_file" {
-  description = "File with docker configuration"
+  description = "File with docker configuration COMPUTE"
 }
 
 variable "name" {

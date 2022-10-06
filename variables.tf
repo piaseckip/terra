@@ -30,7 +30,7 @@ variable "ssh_key" {
 
 variable "docker_config_file" {
   type        = string
-  description = "File with docker configuration"
+  description = "File with docker configuration ROOT"
 }
 variable "name" {
   type        = string
