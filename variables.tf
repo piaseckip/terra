@@ -18,17 +18,17 @@ variable "micro" {
   description = "Micro - size of ec2 aws instance"
 }
 
-variable "ami-ubuntu" {
+variable "ami_ubuntu" {
   type        = string
   description = "Default ami of ubuntu image"
 }
 
-variable "ssh-key" {
+variable "ssh_key" {
   type        = string
   description = "Main key used for ec2 instances"
 }
 
-variable "docker-config-file" {
+variable "docker_config_file" {
   type        = string
   description = "File with docker configuration"
 }
